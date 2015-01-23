@@ -6,7 +6,7 @@
 % @return:  GammaP => gamma positive for the trajectory to be tested
 %           GammaN => gamma negative for the trajectory to be tested
 %           logAnsgamma => log difference between GammaP and GammaN
-function [GammaP,GammaN,logAnsGamma] = testTrajectory(filePath, fileNumber, idNumber)
+function [changeTime,GammaP,GammaN,logAnsGamma] = testTrajectory(filePath, fileNumber, idNumber)
 % load the learned data from the directory
 load('VAR_DATA.mat');
 load('CONST_DATA.mat');
@@ -43,9 +43,9 @@ end
 % calculate the GammaP for all the zones of the particular trajectory
 % Gamma(theta,0) = p(Zone0|theta).p(theta)
 GammaP = zeros(size(changeZoneId));
-GammaP(1,1) = (1/183)*(1/2);
+GammaP(1,1) = (1/2);
 GammaN = zeros(size(changeZoneId));
-GammaN(1,1) = (1/183)*(1/2);
+GammaN(1,1) = (1/2);
 % Gamma(theta,zones(n)) = TRANSITION_NORM(zones(n-1),zones(n)) .
 %                         DELTA_NORM(zones(n-1),zones(n),time) .
 %                         Gamma(theta,zones(n-1)
