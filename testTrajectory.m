@@ -6,7 +6,7 @@
 % @return:  GammaP => gamma positive for the trajectory to be tested
 %           GammaN => gamma negative for the trajectory to be tested
 %           logAnsgamma => log difference between GammaP and GammaN
-function [changeTime,GammaP,GammaN,logAnsGamma] = testTrajectory(filePath, fileNumber, idNumber)
+function [timeChangerPoints,GammaP,GammaN,logAnsGamma] = testTrajectory(filePath, fileNumber, idNumber)
 % load the learned data from the directory
 load('VAR_DATA.mat');
 load('CONST_DATA.mat');
